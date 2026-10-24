@@ -411,36 +411,44 @@ export const mockOverlaps = [
   {
     id: "ov-1",
     kind: "Potential issue overlap",
-    case_a_id: "c-101",
-    case_b_id: "c-102",
-    institution_id: "north-valley",
-    institution_name: "North Valley Institute of Technology",
-    category: "Fees",
-    period: "2026 autumn",
-    evidence_ref: "EXAM-CIRCULAR-26",
-    summary: "Excess semester examination fees reported in both PGRC and Regulation Bureau (evidence: EXAM-CIRCULAR-26)",
+    case_a: "c-101",
+    case_b: "c-102",
+    a: mockCases[0],
+    b: mockCases[1],
+    reasons: [
+      "Same verified institution: North Valley Institute of Technology",
+      "Matching category: Fees",
+      "Shared evidence circular EXAM-CIRCULAR-26",
+    ],
+    score: 92,
+    summary:
+      "Excess semester examination fees reported in both PGRC and Regulation Bureau (evidence: EXAM-CIRCULAR-26)",
     active: true,
     decision: null,
-    confidence: "High",
+    tasks: [],
     detected_at: "2026-10-21T10:00:00Z",
   },
   {
     id: "ov-2",
     kind: "Same institution activity",
-    case_a_id: "c-101",
-    case_b_id: "c-103",
-    institution_id: "north-valley",
-    institution_name: "North Valley Institute of Technology",
-    category: "Various",
-    period: "2026 autumn / Sep 2026",
-    evidence_ref: "",
-    summary: "Concurrent cases at North Valley Institute of Technology across Fees and Faculty salary",
+    case_a: "c-101",
+    case_b: "c-103",
+    a: mockCases[0],
+    b: mockCases[2],
+    reasons: [
+      "Same institution: North Valley Institute of Technology",
+      "Independent categories (Fees vs Faculty salary)",
+    ],
+    score: 45,
+    summary:
+      "Concurrent cases at North Valley Institute of Technology across Fees and Faculty salary",
     active: true,
     decision: "Institution context noted",
-    confidence: "Medium",
+    tasks: [],
     detected_at: "2026-10-22T08:00:00Z",
   },
 ];
+
 
 export const mockNotifications = [
   {
